@@ -1,0 +1,26 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+
+The study of quantum systems programmatically has offered novel approaches to
+many different problems, highlighting speedups to established classical
+algorithms. In this paper, we explore continuous-time and stochastic quantum
+walks. Recognizing a gap in accessible tools for modern platforms, we present
+the \texttt{QWAK} package, developed in \texttt{Python 3}, providing
+researchers with a simple but effective tool for quantum walk simulation, their
+transport properties and applications. Given that our CTQW evolution relies on
+graphs, packages like \texttt{NetworkX} offer powerful yet intuitive 
+methods for investigating quantum walks over generalized structures - a domain
+with numerous unresolved questions.
+
+
+Moving forward, we plan to enhance the package in a few different ways.
+Planned features include support for CTQW with multiple walkers, refined
+visualization tools, and a seamless integration of stochastic quantum walks
+into the graphical user interface.  Additionally, we plan to enhance
+performance-intensive routines by exploiting GPU capabilities with packages
+like \texttt{CuPy}, as well as refining the \texttt{checkPST} method and the
+\texttt{StochasticQWAK} class implementations, ensuring \texttt{QWAK} remains
+competitive among quantum walk simulation solutions.
+
+\end{document}
+

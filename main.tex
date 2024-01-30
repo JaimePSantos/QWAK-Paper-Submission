@@ -1,0 +1,300 @@
+%% This template can be used to write a paper for
+%% Computer Physics Communications using LaTeX.
+%% For authors who want to write a computer program description,
+%% an example Program Summary is included that only has to be
+%% completed and which will give the correct layout in the
+%% preprint and the journal.
+%% The `elsarticle' style is used and more information on this style
+%% can be found at 
+%% http://www.elsevier.com/wps/find/authorsview.authors/elsarticle.
+%%
+%%
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+%% This list environment is used for the references in the
+%% Program Summary
+%%
+\usepackage{comment}
+\usepackage{braket}
+\usepackage{mathrsfs}
+\newtheorem{definition}{Definition}[section]
+\usepackage{mathtools}
+\usepackage{indentfirst}
+\usepackage{pgfplots}
+\usepackage{physics}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{subfiles}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{myStyle}
+\usepackage{adjustbox}
+\renewcommand\ttdefault{cmvtt} 
+\newcommand{\mysinglefigurescale}{0.35}
+
+\journal{Computer Physics Communications}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{QWAK: Quantum Walk Analysis Kit}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author[a]{Jaime Santos\corref{author}}
+\author[b]{Bruno Chagas}
+\author[c]{Rodrigo Chaves}
+\author[d]{Lorenzo Buffoni}
+
+\cortext[author] {Corresponding author.\\\textit{E-mail address:} jaimepereirasantos123@gmail.com}
+\address[a]{Haslab, INESC TEC, Portugal}
+\address[b]{National University of Ireland Galway, Ireland}
+\address[c]{Universidade Federal de Minas Gerais, Brazil}
+\address[d]{Department of Physics and Astronomy, University of Florence, 50019 Sesto Fiorentino, Italy}
+
+\begin{abstract}
+In this paper, we describe a continuous-time quantum walk (CTQW) simulation
+package for \texttt{Python 3}, covering their theoretical foundations and
+practical applications. The software provides both unitary and open system
+evolution of over general graphs, alongside tools for visualization and
+exploration of several different aspects of the quantum walk.  We go over
+installation, design and performance of the package, concluding with several
+examples on how \texttt{QWAK} can be used to explore problems such as search,
+perfect state transfer, among others.
+\end{abstract}
+
+
+%\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+%keyword1; keyword2; keyword3; etc.
+
+%\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+% All CPiP articles must contain the following
+% PROGRAM SUMMARY.
+
+{\bf PROGRAM SUMMARY/NEW VERSION PROGRAM SUMMARY}
+  %Delete as appropriate.
+
+\begin{small}
+\noindent
+{\em Program Title: }QWAK                                          \\
+{\em CPC Library link to program files:} (to be added by Technical Editor) \\
+{\em Developer's repository link: } \url{https://github.com/JaimePSantos/QWAK}\\
+{\em Code Ocean capsule:} (to be added by Technical Editor)\\
+{\em Licensing provisions:} CC By 4.0 \\
+{\em Programming language: } Python, Javascript, HTML and CSS.                                  \\
+% {\em Supplementary material:}                                 \\
+  % Fill in if necessary, otherwise leave out.
+% {\em Journal reference of previous version:}*                  \\
+  %Only required for a New Version summary, otherwise leave out.
+% {\em Does the new version supersede the previous version?:}*   \\
+  %Only required for a New Version summary, otherwise leave out.
+% {\em Reasons for the new version:*}\\
+  %Only required for a New Version summary, otherwise leave out.
+% {\em Summary of revisions:}*\\
+  %Only required for a New Version summary, otherwise leave out.
+{\em Nature of problem:}
+  \texttt{QWAK} simulates unitary and stochastic continuous-time quantum walks,
+  focusing on transport property analysis, applications, visualization and ease
+  of use.\\
+{\em Solution method:}
+ We leverage \texttt{Python}'s vast package resources such as \texttt{NumPy}
+ and \texttt{NetworkX} to implement the desired structures, and then generate
+ the Hamiltonians via spectral decomposition. For the stochastic case, the
+ Lindblad master equations are solved with \texttt{Qutip}.\\
+{\em Additional comments including restrictions and unusual features:}\\
+  %Provide any additional comments here.
+  The GUI provided uses \texttt{MongoDB} to store \texttt{QWAK} objects, which
+  currently limits the size of the graphs since the adjacency matrices are also
+  stored.  \\
+\end{small}
+
+\section{Introduction}
+    \subfile{Sections/Introduction/intro}
+
+
+\section{Theoretical Background}\label{sec:theor_background}
+    \subfile{Sections/TheoreticalBackground/TheorBackgroundIntro}
+    \subsection{Continuous-Time Quantum Walk}
+        \subfile{Sections/TheoreticalBackground/contTimeQW}
+    \subsection{Transport Properties}
+        \subfile{Sections/TheoreticalBackground/TransportProp/transportProp-intro}
+        \subfile{Sections/TheoreticalBackground/TransportProp/transportProp}
+    \subsection{Searching Algorithm}
+        \subfile{Sections/TheoreticalBackground/SearchingAlgorithm}\label{sec:theor_searching}
+    \subsection{Stochastic Quantum Walk}
+        \subfile{Sections/TheoreticalBackground/stochasticCtqw}
+
+\section{Package Overview}\label{sec:pack_overview}
+    \subfile{Sections/SoftwareDescription/qwak-intro}
+    \subsection{Istallation and dependencies}
+        \subfile{Sections/SoftwareDescription/Subsections/installation}
+    \subsection{Package Description}
+        \subfile{Sections/SoftwareDescription/Subsections/overview}\label{sec:OverviewDescription}
+    \subsection{Graphical Interface}
+        \subfile{Sections/SoftwareDescription/Subsections/graphicalInterface}
+
+\section{Use Cases}\label{sec:use_cases}
+    \subfile{Sections/SoftwareUsage/qwak-usage-intro}
+    \subsection{Perfect State Transfer}
+        \subfile{Sections/SoftwareUsage/Subsections/perfectStateTransfer}
+    \subsection{Oriented Quantum Walk}
+        \subfile{Sections/SoftwareUsage/Subsections/orientedQuantumWalk}
+    \subsection{Searching with QWAK}
+        \subfile{Sections/SoftwareUsage/Subsections/searchingQuantumWalk}
+    \subsection{Stochastic QWAK on a Maze}
+        \subfile{Sections/SoftwareUsage/Subsections/stochasticQuantumWalk}
+
+
+\section{Conclusion}\label{sec:conclusion}
+    \subfile{Sections/Conclusion/conclusion}
+
+\clearpage
+
+%% main text
+\section*{Funding}
+This work is financed by National Funds through the Portuguese funding agency,
+FCT - Fundação para a Ciência e a Tecnologia, within project UIDB/50014/2020 and project 2023.02269.BD. 
+
+This work was partially funded  through FCT - Fundação para a Ciência e a Tecnologia, I.P. (Portuguese Foundation for Science and Technology) within the project IBEX, with reference 10.54499/PTDC/CCI-COM/4280/2021.
+
+\sloppy
+L.B. received funding from Next Generation EU, in the context of the National
+Recovery and Resilience Plan, M4C2 investment 1.2. Project SOE0000098-ThermoQT. This resource was financed by the Next Generation EU [DD 247 19.08.2022]. The
+views and opinions expressed are only those of the authors and do not
+necessarily reflect those of the European Union or the European Commission.
+Neither the European Union nor the European Commission can be held responsible
+for them.
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}         ==>>  [#]
+%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+%% References with bibTeX database:
+
+\bibliographystyle{elsarticle-num}
+\bibliography{bibliography}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use elsarticle-num.bst.
+
+%% References without bibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have the following form:
+%%   \bibitem{key}...
+%%
+
+% \bibitem{}
+
+% \end{thebibliography}
+
+
+\end{document}
+
+%%
+%% End of file 

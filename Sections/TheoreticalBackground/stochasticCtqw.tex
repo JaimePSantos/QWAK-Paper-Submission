@@ -1,0 +1,108 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+
+The stochastic CTQW can be viewed as a CTQW with added noise, therefore
+requiring the use of density matrices. The system's evolution is then
+represented by 
+\begin{equation}
+    \rho = \sum_j p_j\ket{\psi_j}\bra{\psi_j},
+\end{equation}
+where $\ket{\psi_j}$ are pure states, and $p_j$ are non-negative
+coefficients summing to one. The underlying graph for state $\rho$ is
+characterized by an adjacency matrix $A$, where $A_{i,j}=1$ denotes a link
+between nodes, and $A_{i,j}=0$ its absence.
+
+%To describe the stochastic CTQW, and we can interpret as a CTQW with added
+%noise, we will need to introduce the formalism of density matrices where the
+%evolution of the system is described by $\rho=\sum_j
+%p_j\ket{\psi_j}\bra{\psi_j}$ for some pure states $\ket{\psi_j}$ and
+%coefficients $p_j$ that are non-negative and add up to one.
+%The graph on which the state $\rho$ lives, is defined by links between pair of
+%nodes, which are described by an adjacency matrix $A$. The coefficient
+%$A_{i,j}=1$ indicates the presence of the link, while $A_{i,j}=0$ indicates its
+%absence.\par 
+
+This system's evolution follows the quantum stochastic walk model
+\cite{whitfield2010, Caruso2014}, governed by the Lindblad master equation
+\cite{Lindblad1976}. Here, the Hamiltonian $H$ is given by the 
+adjacency matrix, i.e., $H=A$, and Lindblad operators introduce noise to the
+quantum walker
+%The evolution of the quantum system has been based on the quantum stochastic
+%walk model \cite{whitfield2010, Caruso2014} that can be described by a Lindblad
+%master equation \cite{Lindblad1976} where the Hamiltonian of the system $H$
+%corresponds to the adjacency matrix itself, i.e. $H=A$, and with a set of
+%Lindblad operators acting as noise for the quantum walker, i.e.
+\begin{equation}
+    {\dot \rho} = -(1-p)\ i[H,\rho] + p\  \mathcal{L}_{CRW} (\rho) + \mathcal{L}_{sink} (\rho)
+    \label{densityEvolution}
+\end{equation}
+with a term describing classical random walk (CRW) regime as
+
+%with a term describing (for $p=1$) the regime of a classical random walk (CRW) as
+\begin{equation}
+    \mathcal{L}_{CRW} (\rho) = \sum_{i,j} L_{ij} \rho L_{ij}^{\dagger} - \frac{1}{2} \{L_{ij}^\dagger L_{ij}, \rho\}.
+\end{equation}
+The Lindblad operators, $L_{ij}$, are given by $L_{ij} =
+(A_{ij}/d_j)\ket{i}\bra{j}$, where $\lbrace d_j \rbrace$ are the node degrees.
+When $p=0$, we recover the pure quantum walker, while $p=1$ reflects a
+classical random walker. For $p$ within $[0,1]$, the quantum stochastic walker
+emerges, blending coherent evolution and the effects of noise. Additionally, a
+special Lindblad operator can irreversibly transfer the population from an
+"exit" node $n$ to sink $S$ at rate $\Gamma$ as follows
+
+%\begin{equation}
+%    \mathcal{L}_{CRW} (\rho) = \sum_{i,j} L_{ij} \rho L_{ij}^{\dagger} - \frac{1}{2} \{L_{ij}^\dagger L_{ij}, \rho\},
+%\end{equation}
+%with the Lindblad operators being defined as $L_{ij} =
+%(A_{ij}/d_j)\ket{i}\bra{j}$, where $\lbrace d_j \rbrace$ are the node degrees.
+%When $p=0$ one recovers the pure quantum walker regime, while $p=1$ corresponds
+%to the classical scenario for a random walker. For the intermediate values of
+%$p$ in the range $[0,1]$, one has a quantum stochastic walker with an interplay
+%between coherent evolution and noise effects. In addition, we can have a
+%special Lindblad operator that irreversibly transfers the population from an
+%"exit" node $n$ to the sink $S$ with a rate $\Gamma$, as follows
+%\begin{equation}
+%    \mathcal{L}_{sink} (\rho) = \Gamma \left [ 2\ket{S}\bra{n}\rho \ket{n} \bra{S} - \{\ket{n}\bra{n}, \rho\} \right ].
+%\end{equation}
+%The sink $S$, which irreversibly traps the population constitutes a kind of
+%\emph{exit} node and it can be useful to model phenomena such as energy
+%transfer. Equation \ref{densityEvolution} gives leads to the following
+%expression for the escape probability of the walker trough the sink  
+
+\begin{equation}
+    \mathcal{L}_{sink} (\rho) = \Gamma \left [ 2\ket{S}\bra{n}\rho \ket{n} \bra{S} - \{\ket{n}\bra{n}, \rho\} \right ].
+\end{equation}
+The sink \(S\), acting as an \emph{exit} node, irreversibly captures the
+population and can be a useful model for phenomena like energy transfer. From
+equation \eqref{densityEvolution}, we derive the escape probability of the walker
+through the sink
+
+
+% \textcolor{red}{
+% \begin{itemize}
+%     \item We say above that the special operator transfers the population from
+%         an exit node to the sink, but here we say the sink node is the exit
+%         node. Is this correct?
+% \end{itemize}
+% }
+
+\begin{equation}
+    p_{sink}(t) = 2 \Gamma \int_0^t \rho_{n,n}(t') \ \dd t' \; .
+\end{equation}
+
+
+The stochastic CTQW has numerous applications such has modelling energy
+transfer phenomena \cite{Caruso2009}, state discrimination \cite{Pozza2020} and
+reinforcement learning \cite{Pozza2022,Buffoni2020} among the others. It also
+serves as a useful model that can easily interpolate, via the parameter $p$,
+between a purely unitary evolution ($p=0$) and a classical one ($p=1$).
+
+
+%The Stochastic CTQW introduced here have found numerous applications in
+%modelling energy transfer phenomena \cite{Caruso2009}, state
+%discrimination \cite{Pozza2020} and reiforcement learning
+%\cite{Pozza2022,Buffoni2020} among the others.  They also serve as a
+%useful model that can easily interpolate, via the parameter $p$, between a
+%purely unitary evolution ($p=0$) and a classical one ($p=1$).
+
+\end{document}

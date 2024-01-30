@@ -1,0 +1,94 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+
+% \begin{itemize}
+%     \item Only simulation context is here. We should probably add some other
+%         stuff and cut down on the detail of simulation.
+%     \item Add a paragraph about quantum computing packages after second paragraph.
+%     \item Another paragraph about quantum walks.
+%     \item \color{blue}{we need to change the way we cite, for example, 'in the work of [1]'}
+% \end{itemize}
+
+The study of quantum systems in a programmable manner has been a topic of
+interest since the proposal of the concept of a quantum computer as introduced
+by Feynman in his seminal work \cite{feynman1982}. This work showcased that
+conventional classical Turing machines would not be able to simulate certain
+quantum phenomena covered by by the theoretical framework of a quantum
+computer. Feynman also highlights the resource-intensive nature of simulating
+quantum systems on classical computers, while quantum computers could simulate
+a system of many particles requiring only an equivalent number of qubits.\par
+
+After several decades since the first idea of quantum computing was born, we've
+seen significant progress being made, showcasing tangible progress from
+theoretical to practical implementation. Currently, there are two major
+paradigms of quantum computing \cite{willschLecture22}. The initial one is
+referred to as \textit{gate-based} quantum computing, and there are several
+versions of it accessible in the market. Examples include
+\textit{superconducting quantum computers} by companies such as IBM and Google,
+\textit{photonic quantum computers} by Xanadu and PsiQuantum, and
+\textit{silicon-based quantum computers} by Intel. The second paradigm is
+\textit{quantum annealing}, or \textit{adiabatic quantum computing}, with an
+implementation by D-Wave. Quantum annealing offers many advantages regarding
+optimization problems. However, it is not suitable for universal quantum
+computing in contrast with the gate-based paradigm. Even though running a
+quantum algorithm on a quantum computer will be the most efficient solution in
+the future, we are currently in the \textit{Noisy Intermediate-Scale quantum}
+(NISQ) era, where quantum hardware is limited to a small number of error-prone
+qubits. For this reason, classical simulation of quantum systems and algorithms
+is still practical. Additionally, it is advantageous to study the scalability
+of algorithms and transport properties in order to gain insights.\par
+
+One of our primary objectives is to simulate continuous- and discrete-time
+quantum walks, along with their algorithms, and investigate the properties of
+quantum transport, as well as the Stochastic Quantum Walk. One of the earliest
+software for the numerical realization of quantum walks include the work of
+Marquezino and Portugal \cite{marquezino2008}, who developed a general
+simulator for discrete-time quantum walks on one- and two-dimensional lattices.
+Sawerwain and Gielerak \cite{sawerwain2010} later presented further work on
+these structures, where they studied the simulation of quantum walks by taking
+advantage of the GPU and CUDA technology. Another interesting program for
+simulating discrete-time quantum walks came with the work of Berry, Bourke, and
+Wang \cite{berry2011}. This package enables direct simulation of these quantum
+walks and visualization of the time-evolution on arbitrary undirected graphs.
+It also offers the functionality to create plots for continuous-time quantum
+walks with externally provided data.\par 
+
+Direct simulation tools for continuous-time quantum walks can be observerd in
+existing literature, with one of the earliest examples attributed to Izaac and
+Wang \cite{izaac2015}. Their distributed memory software claims to perform
+efficient simulation of multi-particle continuous-time quantum walk-based
+systems on \textit{High-Performance Computing} platforms. Unfortunately, this
+program was written in Python 2, and the creators no longer support it.
+Fallon, Rodriguez, and Wang \cite{falloon2017a} provide a \textit{Mathematica}
+package that implements a simulator of \textit{Quantum Stochastic Walks},
+extending the continuous-time model to a broader context. These walks
+incorporate both coherent and incoherent dynamics, meaning that quantum
+stochastic walks can be instantiated as quantum walks and classical random
+walks. This paper then provides a way of implementing quantum walks on many
+structures, opening the door to applications ranging from modeling the capture
+of energy by photosynthetic protein complexes, as shown by Mohseni et al.
+\cite{mohseni08}, to page ranking algorithms used by search engines. Glos,
+Miszczak, and Ostaszewski \cite{glos2018} subsequently ported and enhanced this
+package to the Julia programming language. \par
+
+Given this context, it becomes apparent that an updated, user-friendly
+simulation software Continuous-Time Quantum Walks (CTQWs) is in demand,
+particularly one equipped to analyze the evolution of the walk on a generalized
+graph of arbitrary direction, weight and orientation. Moreover, a software that
+has the capacity to explore quantum walk-based algorithms and transport
+properties. It is worth highlighting that, as far as our knowledge extends,
+there is currently no existing package capable of fulfilling these requirements
+for highly general graphs. \par
+
+In the following sections, we will explore the core content of this paper.
+Section 2 will provide the necessary theoretical foundation, explaining the
+basic concepts of continuous-time quantum walks, as well as the stochastic
+variation, and how they relate to transport properties. In Section 3, we will
+shift our focus to practical matters, offering a comprehensive package
+overview, step-by-step installation instructions, and a user-friendly guide for
+basic usage, including a graphical interface. Section 4 will explore use cases,
+highlighting the versatility of our package in various scenarios. Finally, in
+Section 5, we will conclude our discussion and provide insights into the
+broader implications and future directions of our research.
+
+\end{document}
