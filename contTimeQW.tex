@@ -16,7 +16,7 @@ adjacency matrix that represents each vertex connection, given by
 	A_{ij} = \begin{cases} 1, & \mbox{if } (i,j)\in G \\ 0, & \mbox{otherwise,} \end{cases}
 \end{equation}
 and D is the diagonal matrix $D_{jj} = deg(j)$ corresponding to the
-degree %\footnote{The degree of a vertex refers to the number of edges that it is connected to.} 
+degree
 of vertex $j$.\par
 
 \begin{figure}[!h]
@@ -29,8 +29,7 @@ of vertex $j$.\par
 \end{figure}
 
 Analogously, Schrödinger's equation describes the quantum version of the walk 
-%The Schrödinger's equation will describe the
-%continuous-time quantum walk model equation
+
 \begin{equation}
 	i\hbar \frac{d\ket{\psi(t)}}{dt} = H \ket{\psi(t)}, \label{shrodinger}
 \end{equation}
@@ -39,9 +38,6 @@ A$. This operator can be defined either as a time-independent Laplacian or
 adjacency matrix without loss of generality. Considering $\hbar = 1$, the
 solution of the continuous-time quantum walk will be 
 
-%\par Finally, considering the Hamiltonian as a time-independent Laplacian or
-%adjacency matrix, as well as without loss of generality $\hbar = 1$, the
-%solution of the continuous-time quantum walk will be 
 \begin{equation}
 	\ket{\psi(t)} = U(t)\ket{\psi(0)}.
     \label{eq:ctqwSystemEvolution}
@@ -53,7 +49,6 @@ is
     \label{eq:contSimulUniOp}
 \end{equation}
 
-%\textcolor{blue}{
 A brief look at Figure \ref{fig:contdist0} highlights key properties of the
 quantum walk. Contrary to the classical scenario, where the probability of
 finding the walker is predominantly concentrated around the origin with a
@@ -61,52 +56,5 @@ standard deviation scaling as $\sqrt{t}$ (termed \textit{diffuse} propagation),
 the quantum walk exhibits \textit{ballistic} propagation, proportional to $t$. Here, the probability
 peaks away from the origin, and the standard deviation grows linearly with time
 \cite{childs2002}, indicating a quadratic advantage in the quantum case.
-%}
-
-%For a more detailed visualization, this quantum walk model was coded in Python,
-%and Figure \ref{fig:contdist0} was obtained by setting the transition rate to
-%$\gamma=\frac{1}{2\sqrt{2}}$ and the initial condition to $\ket{\psi(0)} =
-%\ket{0}$.  A brief look at Figure \ref{fig:contdist0} reveals several
-%similarities to previous models. The property of having two peaks away from the
-%origin and low probability near the origin is present across all the quantum
-%walks. However, a symmetric initial condition is not required in the continuous
-%case.\par
-
-% A general state of a system $\ket{\psi(t)}$ can be written as a function of
-% its complex amplitudes 
-% \begin{equation}
-% 	q_i = \braket{i|\psi(t)},
-% \end{equation}
-% which means equation \eqref{shrodinger} can be rewritten as 
-% \begin{equation}
-% 	i\hbar \frac{dq_i(t)}{dt} = \sum_j H_{ij} q_j(t).
-% 	\label{eq:contWalkShrod}
-% \end{equation}
-% Comparing equations \eqref{eq:contWalkShrod} and \eqref{eq:classicalContWalk},
-% the Laplacian is replaced by the Hamiltonian and the probabilities by
-% amplitudes. One of the main differences is the complex phase $i$, which will
-% result in very different behavior.  Setting $\hbar = 1$ and solving the
-% differential equation results in the evolution operator of this walk 
-% \begin{equation}
-% 	U(t) = e^{-iHt} = e^{i(\gamma L)t} = e^{i\gamma(A-D)t},
-% \end{equation}
-% In the regular graph case, where $D$ is simply the degree of the graph
-% multiplied by the identity matrix, $A$ and $D$ will commute, meaning that the
-% evolution operator can be written in terms of the adjacency matrix 
-% \begin{equation}
-% 	U(t) = e^{i\gamma A t - i\gamma D t} = e^{i\gamma A t} e^{-i\gamma D t} = \phi(t) e^{i\gamma A t},
-% 	\label{eq:contSimulUniOp}
-% \end{equation}
-% since the degree matrix becomes a global phase. In a uni-dimensional
-% quantum system, each vertex will have at most two other neighboring vertices
-% and the Hamiltonian can be written as
-
-% \begin{equation}
-% 	H_{ij} = \begin{cases} 
-% 		2\gamma, & \mbox{if } i= j; \\ 
-% 		-\gamma, & \mbox{if } i\neq j\mbox{ and adjacent};\\
-% 		0, & \mbox{if } i\neq j\mbox{ and not adjacent}.
-% 	\end{cases}
-% \end{equation}\par
 
 \end{document}

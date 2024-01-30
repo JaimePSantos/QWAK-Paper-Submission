@@ -1,0 +1,65 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+The study of quantum systems in a programmable manner has been a topic of
+interest since the proposal of the concept of a quantum computer as introduced
+by Feynman in his seminal work \cite{feynman1982}. He demonstrated that
+classical Turing machines fall short in simulating certain quantum phenomena,
+which quantum computers can address. Feynman also emphasized that classical
+simulation of quantum systems is often very resource-intesive, while quantum
+computers can simulate multi-particle systems with only a corresponding number
+of qubits.
+
+After decades of development, quantum computing has evolved from theory to
+practice with two major paradigms: \textit{gate-based} and \textit{quantum
+annealing} \cite{willschLecture22}. The former has various implementations such as 
+\textit{superconducting} (IBM, Google), \textit{photonic} (Xanadu,
+PsiQuantum), and \textit{silicon-based} (Intel) quantum computers. The latter,
+exemplified by D-Wave, excels in optimization problems but lacks universal computing
+capabilities. Currently, we are in the \textit{Noisy Intermediate-Scale
+Quantum} (NISQ) era, characterized by small, error-prone qubit arrays. Thus,
+classical simulation remains relevant for studying algorithm scalability and
+transport properties.
+
+Our primary objectives include simulating continuous-time quantum walks
+(CTQWs), investigating quantum transport properties, and exploring stochastic
+quantum walks (SQWs). Early software for quantum walk simulation includes
+Marquezino and Portugal's \cite{marquezino2008} general simulator for one- and
+two-dimensional lattices. Sawerwain and Gielerak \cite{sawerwain2010} extended
+this by leveraging GPU and CUDA technology for enhanced simulations. Berry
+\textit{et al.} \cite{berry2011} further contributed with a package that not
+only simulates discrete-time quantum walks on arbitrary undirected graphs but
+also visualizes time-evolution and supports continuous-time quantum walk
+plotting with external data. 
+
+Direct simulation tools for CTQWs are well documented in the literature, with
+early work by Izaac and Wang \cite{izaac2015} introducing efficient simulation
+software for multi-particle systems on \textit{High-Performance Computing}
+platforms, albeit developed in \texttt{Python 2} and no longer supported.
+Fallon \textit{et al.} \cite{falloon2017a} provide a \textit{Mathematica}
+package for SQWs, incorporating both coherent and incoherent dynamics, thus
+enabling simulations of quantum and classical random walks. This approach has
+facilitated diverse applications, from modeling energy capture in
+photosynthetic complexes \cite{mohseni08} to developing page ranking algorithms
+\cite{SanchezBurillo2012}. Glos \textit{et al.} \cite{glos2018}
+later ported this package to the \texttt{Julia} language. \texttt{Qutip}
+\cite{Johansson2011,Johansson2012} is an alternative \texttt{Python} solver for
+these kinds of systems, and is integrated into our package for SQW simulation.
+
+Given the current landscape, there's a clear demand for updated, user-friendly
+simulation software for CTQWs, especially one that can analyze evolution
+on generalized graphs with arbitrary direction, weight, and orientation.
+Additionally, the software is capable of exploring quantum walk-based
+algorithms and transport properties. While some tools are availale, none we've
+encountered fully meet the requirements for highly general graphs. 
+
+The paper is organized as follows: Section \ref{sec:theor_background} lays out
+the theoretical foundation, elucidating continuous-time quantum walks, their
+stochastic variation, and relation to transport properties. Section
+\ref{sec:pack_overview} presents a detailed package overview, including an
+installation guide, a tutorial, and a description of the graphical interface.
+Section \ref{sec:use_cases} showcases the package's versatility through several 
+use cases. We wrap up with Section \ref{sec:conclusion}, offering conclusions
+and insights into future research directions.
+
+\end{document}

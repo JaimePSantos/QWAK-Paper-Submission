@@ -1,43 +1,6 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-% It has been known for some time that the standard deviation of quantum walks scales
-% faster in time than the classical random walk, for structures such as the cycle
-% by \cite{aharonov2002}, the line with the work of \cite{ambainis2001}, and
-% multi-dimensional lattices as shown by \cite{santos2015}. Quantum interference
-% is responsible for the improvements offered by quantum walk transport, which
-% have the potential to reach exponential speedups in applications such as
-% \textit{hitting time} in hypercubic graphs as shown by  \cite{jkempe02}, and on
-% glued trees by \cite{childs2002}. More modestly, \cite{chakrabortyHow20} shows
-% that the upper bound for the speedup of quantum walk \textit{mixing time} is
-% \textit{almost} quadratic for \textit{almost} all networks. \par
-
-% The ballistic behavior introduced by quantum interference can be better
-% understood by looking closer at localization quantities such the
-% \textit{inverse participation ratio}, which gives the average number of nodes
-% the wave function is spread over, providing further insight on how the walker
-% escapes or maintains its given position. \cite{zengDiscrete-time17} studies
-% the relationship between this quantity and the standard deviation when
-% phase disorders are introduced into the walk. \cite{buarqueAperiodic19} further
-% investigates these transport properties on aperiodic discrete-time quantum
-% walks. \par
-
-% Another feature of quantum transport is creating communication channels through
-% a phenomenon known as \textit{quantum state transfer}. \cite{boseQuantum03}
-% proposes a setup composed of unmodulated and unmeasured spin-chains to transfer
-% quantum information in short distances with better fidelities than classical
-% channels, achieving \textit{perfect state transfer} (PST) for specific
-% configurations. Further work by \cite{christandlPerfect04} discovers a class of
-% qubit networks that exhibit PST for any quantum state in a specific time, and
-% \cite{godsilWhen11} defines a procedure to investigate if a given adjacency
-% matrix of a graph allows PST to occur. In the context of the continuous-time
-% quantum walk, \cite{alvirPerfect14} formulates and studies this effect on
-% irregular graphs described by Laplacian matrices. This was extended to CTQWs on
-% directed and oriented structures in works such as \cite{godsilPerfect2020} and
-% \cite{chavesWhy22}, although the behavior of transport properties in these
-% structures is still not very well researched, meaning there are possible
-% algorithmic advantages to be found.\par 
-
 \subsubsection{Statistical Measures}
 
 Transport properties of CTQWs can be quantified using metrics like mean and
@@ -53,21 +16,6 @@ and the standard deviation is
 notably, as aforementioned, the standard deviation evolves quadratically faster
 than in the classical case \cite{grimmett2003}.
 
-%The transport characteristics of continuous-time quantum walks can be
-%quantified through statistical measures such as the mean and standard
-%deviation. These properties provide insights into the central tendency and
-%dispersion of the walker's positions, serving as valuable indicators of the
-%walk's behavior. We define the mean value as
-%\begin{equation}
-%    \mu = \sum_{x} x |\langle \psi | x \rangle|^2
-%\end{equation}
-%and the standard deviation as
-%\begin{equation}
-%    \sigma = \sqrt{\sum_{i} (x - \mu)^2 |\langle \psi | x \rangle|^2},
-%\end{equation}
-%and we might notice the standard deviation is quadratically faster in
-%comparison to its classical counterpart \cite{grimmett2003}.
-
 To quantify the walker's localization, we study the likelihood of finding the
 walker at a specific position after time $t$, namely the \textit{survival
 probability} \cite{Goenuelol2011}. For a symmetric position range of $ 
@@ -75,15 +23,6 @@ probability} \cite{Goenuelol2011}. For a symmetric position range of $
 \begin{equation}
     P_{[k_0,k_1]}(t) = \sum_{i=k_0}^{k_1} |\bra{i}\ket{\psi(t)}|^2.
 \end{equation}
-
-%In order to quantify the localization of the quantum walker, we may define the
-%survival probability of a quantum walk, which can be characterized as the
-%probability of finding the walker in a certain location after some time $t$
-%\cite{Goenuelol2011}. Considering the symmetric position range of $[k_0,k_1]$,
-%can be written as
-%\begin{equation}
-%    P_{[k_0,k_1]}(t)=\sum_{i=k_0}^{k_1} |\bra{i}\ket{\psi(t)}|^2.
-%\end{equation}
 
 Moreover, the \textit{inverse participation ratio} (IPR) provides an estimate
 of the average number of nodes over which the walker is uniformly spread, and
@@ -93,19 +32,6 @@ it is defined as
 \end{equation} 
 with IPR nearing 1 for uniform spread across positions and approaching 0 when
 the walker localizes on a single site as $N$ increases \cite{Danaci2021}.
-
-
-%Moreover, the inverse participation ratio (IPR) provides an estimate of the
-%average number of nodes in a graph where the walker is spread over uniformly,
-%and we can define as
-%
-%\begin{equation}
-%    \text{IPR(t)} = \frac{1}{\sum_{x} |\langle x | \psi(t) \rangle|^4},
-%\end{equation} 
-%
-%and IPR approaches 1 when the walker is evenly spread across the position
-%space, and IPR tends to 0 as the walker becomes localized on a single site, as
-%N approaches infinity \cite{Danaci2021}.
 
 \subsubsection{Perfect State Transfer}
 
@@ -118,26 +44,9 @@ graphs exhibit this phenomenon and under which conditions. This has since been
 explored in both undirected \cite{Coutinho2014, Cheung2014, Zhou2014} and
 directed graphs \cite{Lato2020, Cameron2014}.
 
-%One of the ways to transport information in a graph is related to state
-%transfers. Christandl \textit{et al.} \cite{christandlPerfect04} was one of the
-%first to investigate the phenomenon. They investigated if it was possible for
-%an initial state associated to the vertex in the beginning of a path graph to
-%be found in the last vertex of the graph after some time $t$. They concluded
-%that it was not possible for undirected graphs, but it instigated the
-%exploration of which graphs have the phenomenon and under what conditions. It
-%has been a research topic for both undirected graphs \cite{Coutinho2014,
-%Cheung2014, Zhou2014} and directed graphs \cite{Lato2020, Cameron2014}.
-
 As was previously done in equation \eqref{eq:contSimulUniOp}, given an
 Hamiltonian associated to the adjacency matrix of a graph $G$, the time
 evolution operator can be defined as $U(t) = e^{-itA}$.
-%Define a Hamiltonian associated to the adjacency matrix of a graph $G$, $A$,
-%with vertex and edge set $(E,V)$. The time evolution operator in that case will
-%be defined as
-%
-%\begin{equation}
-%    U(t) = e^{-itA}.
-%\end{equation}
 
 Perfect state transfer (PST) occurs at time $\tau$ between vertices $a$ and $b$
 iff
@@ -157,41 +66,5 @@ the undirected case, fits in the criteria can be done in polynomial time
 hypercube graphs \cite{Coutinho2014, Cheung2014, Zhou2014}. Throughout this
 work, we'll showcase our algorithmic implementation that determines if a graph
 exhibits PST and its corresponding time.
-
-
-
-%PST does not occur for every graph and both eigenvalues and eigenvectors of the
-%adjacency matrix need to obey very specific rules. The conditions are well
-%known for the undirected case \cite{Godsil2012}, but a complete description is
-%still an open problem for oriented graphs \cite{Lato2020}. Although finding a
-%graph with PST can be quite difficult, checking if the adjacency matrix, for
-%the undirected case, fits in the criteria can be done in polynomial time
-%\cite{Coutinho2017}. 
-
-%Literature offers numerous examples of graphs with PST, as a few examples we %have:
-%
-%\begin{itemize}
-%    \item[1.] The complete graph with two vertices allow perfect state transfer
-%        between its vertices in time $t = \pi/2$.
-%
-%    \item[2.] The path graph with three vertices, $P_3$, has perfect state
-%        transfer between its end vertices in time $t = \pi/ 2$.
-%
-%    \item[3.] The hypercube of any order has perfect state transfer between its
-%        antipodal points in the same time $t =\pi/2$.
-%
-%    \item[4.] Any order of Cartesian product of $P_3$ has PST between its
-%        antipodal vertices in the same time $t = \pi/ \sqrt{2}$.
-%        \cite{Christandl2004, Christandl2005}.
-%
-%\end{itemize}
-
-%There are known examples of PST like cartesian products of graphs with PST or
-%hypercubes graphs\cite{Coutinho2014, Cheung2014, Zhou2014} and through out this
-%work we will see many examples of PST as they will be used to test the
-%algorithm implementation of a function to check if a graph has PST and at what
-%time.
-
-%This work has a bunch of references on bipartite doubles and association schemes \cite{Coutinho2015}
 
 \end{document}

@@ -16,12 +16,6 @@ search component into the initial Hamiltonian, typically derived from an
 adjacency or Laplacian matrix. The search Hamiltonian is then formed by summing
 projectors over a set of integers $M$, where indices mark the desired
 element in the graph, and can be defined as
-%We can formulate a searching algorithm using the the continuous-time quantum
-%walk by introducing a search component into the initial Hamiltonian, which is
-%established  using an adjacency or Laplacian matrix. Therefore, the search
-%Hamiltonian is constructed by summing projectors across the set of integers $M$
-%of integer number, with incides indicating the marked element within the graph.
-%We have the Hamiltonian for the searching problem in graphs as
 
 \begin{equation}
     H^\prime = -\gamma A - \sum_{x \in M} \ket{x}\bra{x},
@@ -29,8 +23,6 @@ element in the graph, and can be defined as
 \end{equation}
 where $\gamma \in \mathbb{R}$ is the critical transition rate, which must be
 chosen for optimality and it is a graph-dependent parameter.
-%where $\gamma \in \mathbb{R}$, critical jumping rate, must be chosen for
-%optimality and it is a graph-dependent parameter.
 
 It is known that probability of order $1$ is reached in optimal time for a
 myriad of different structures, such as the complete graph \cite{farhi1996},
@@ -39,36 +31,6 @@ family of strongly regular graphs \cite{Janmark2014}. In fact, search by CTQW
 is optimal for \textit{almost all} graphs \cite{chakraborty2016}, given the
 correct conditions.\par
 
-%Searching through an unstructured database is a task classically achieved by
-%exhaustively evaluating every element in the database. Assume there exists a
-%black box (oracle) that can be asked to find out if two elements are equal.
-%Since we're looking for a specific element in a database of size $N$, we'd have
-%to query the oracle on average $\frac{N}{2}$ times or, in the worst case, $N$ times.\par
-%
-%Grover's algorithm \cite{grover1996} is a quantum alternative for unstructured
-%searches, and it's popularity comes from it's quadratic speedup, being able to
-%find a target element in time  time $\mathcal{O}(\sqrt{N})$. However,
-%algorithms based on the Grover iteration, are not directly implementable over a
-%physical database. As an alternative, it is known \cite{farhi1996} that the
-%CTQW can provide a model to address this, resulting in comparable speedups in
-%much more general structures.
+\end{document}
 
-% As was previously described, the continuous-time quantum walk model is defined
-% by an evolution operator obtained by solving Schrödinger's equation
-
-% \begin{equation}
-% 	U(t) = e^{-iHt}.
-% \end{equation}
-
-% The search problem requires introducing an oracle to the Hamiltonian, which will
-% mark an arbitrary vertex $m$ 
-
-% \begin{equation}
-% 	H' = -\gamma L - \sum_{m \in M}\ket{m}\bra{m},
-%     \label{eq:searchHamiltonian}
-% \end{equation}
-
-% where $M$ is the set of marked vertices. The main challenge will then be
-% finding the value of $\gamma$ that maximizes the probability associated wtih
-% marked element $\ket{w}$ for the smallest time possible. 
 
